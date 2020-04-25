@@ -1,5 +1,7 @@
 from flask import Flask
 from models import *
+import random as rs
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -8,9 +10,13 @@ def hello():
 	return "Hello"
 
 
-@app.route('/fetch')
-def return_advert():
-	return {"data":"we be returning stuff here"}
+@app.route('/serveAd')
+def serveAd():
+    ngosList = []
+    for i in range(1,11):
+        ngosList.append({"Name":"NGO"+str(i+1),"Description":"NGO"+str(i+1)})
+    index = rs.randint(0,len(ngosList)-1)
+    return jsonify(ngosList[index])
 
 
 if __name__ == '__main__':
