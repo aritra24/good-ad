@@ -14,7 +14,7 @@ def hello():
 def serveAd():
     ngosList = []
     for i in range(1,11):
-        ngosList.append({"Name":"NGO"+str(i+1),"Description":"NGO"+str(i+1)})
+        ngosList.append({"name":"NGO"+str(i+1),"description":"NGO"+str(i+1)})
     index = rs.randint(0,len(ngosList)-1)
     return jsonify(ngosList[index])
 
