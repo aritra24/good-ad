@@ -7,13 +7,13 @@ class Publisher(db.Model):
     name = db.Column(db.String(64), unique=False)
     ads_served = db.relationship('AdsLog',backref='publisher',lazy='dynamic')
     click_throughs = db.relationship('VisitedNGOLog', backref='publisher', lazy='dynamic')
-    payments = db.relationship('PaymentInfo', backref='ngo',lazy='dynamic')
+    payments = db.relationship('PaymentInfo', backref='publisher_paid_to',lazy='dynamic')
 
 class NGO(db.Model):
     __tablename__ = "ngo"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=False)
-    payments = db.relationship('PaymentInfo', backref='ngo',lazy='dynamic')
+    payments = db.relationship('PaymentInfo', backref='ngo_paid_to',lazy='dynamic')
 
 class PaymentInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
