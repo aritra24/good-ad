@@ -1,5 +1,27 @@
 from app import db
 from datetime import datetime
+from flask import json
+
+def to_json(inst, cls):
+    """
+    Jsonify the sql alchemy query result.
+    """
+    convert = dict()
+    # add your coversions for things like datetime's 
+    # and what-not that aren't serializable.
+    d = dict()
+    for c in cls.__table__.columns:
+        v = getattr(inst, c.name)
+        if c.type in convert.keys() and v is not None:
+            try:
+                d[c.name] = convert[c.type](v)
+            except:
+                d[c.name] = "Error:  Failed to covert using ", str(convert[c.type])
+        elif v is None:
+            d[c.name] = str()
+        else:
+            d[c.name] = v
+    return json.dumps(d)
 
 class Publisher(db.Model):
     __tablename__ = "publisher"
@@ -14,6 +36,9 @@ class NGO(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=False)
     payments = db.relationship('PaymentInfo', backref='ngo_paid_to',lazy='dynamic')
+
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 class PaymentInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)

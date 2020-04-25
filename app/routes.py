@@ -10,8 +10,9 @@ def hello():
 
 @app.route('/serveAd')
 def serveAd():
-    ngosList = []
-    for i in range(1,11):
-        ngosList.append({"name":"NGO"+str(i+1),"description":"NGO"+str(i+1)})
+    ngosList = NGO.query.all()
+    # for i in range(1,11):
+    #     ngosList.append({"name":"NGO"+str(i+1),"description":"NGO"+str(i+1)})
     index = rs.randint(0,len(ngosList)-1)
-    return jsonify(ngosList[index])
+    print(type(ngosList[index]))
+    return jsonify((ngosList[index].as_dict()))
