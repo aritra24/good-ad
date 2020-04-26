@@ -254,7 +254,7 @@
         .then (res => {
             goodadsText.innerHTML = res.description;
             goodadsLink.innerHTML = `Help ${res.name}!`;
-            goodadsLink.href = `http://localhost:5000/getNgoDetails?referrer=${publisherID}`;
+            goodadsLink.href = `http://localhost:5000/getNgoDetails?ngoid=${res.id}&publisherid=${publisherID}`;
             goodadsImg.src = `../static/${res.name}_ad_banner.png`;
         })
         goodadsDiv.classList.add("cta-btn");
