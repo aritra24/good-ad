@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="./goodadslogo.png" alt="GoodAds Logo"  />
   <h1>GoodAds - Free Ad Service for Non Profits</h1>
   <p>
     GoodAds is a free advertisement platform for Non Profits. The objective behind GoodAds is to help Non Profits raise more funding by reaching out to a wider audience, especially in times of crisis like we COVID19 has presented, without shelling out huge amounts of money on ad campaigns and digital advertising agencies, a luxury a lot of Non Profits cannot afford. Instead, with GoodAds, Non Profits can sign up with as advertisers and we charge the Non Profit with a small percentage of the funds they raise through our ads.   
@@ -85,8 +86,8 @@ Let's take a look at the key players in our ecosystem to understand the platform
 <h2 align="center">About</h2>
 GoodAds was developed at HackNow, an online hackthon organized by CalHacks with MLH and Postman in April 2020 (yeah, the one with Covid). You can check out the
 
-- [Devpost submission here]()
+- [Devpost submission here](https://devpost.com/software/good-ad)
 
-- [Demo video here]()
+- [Demo video here](https://youtu.be/4dTG0-VJQ6I)
 
 <h2 align="center">Credits</h2>

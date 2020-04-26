@@ -4,7 +4,7 @@ window.onload = function () {
   // var publisherid = urlParams.get("publisherid");
   var ngoid = 1;
   var publisherid = 2;
-  var url = `http://localhost:3000/getNgoDetails?ngoid=${ngoid}&publisherid=${publisherid}`;
+  var url = `http://localhost:5000/getNgoDetails?ngoId=${ngoid}&publisherId=${publisherid}`;
   fetch(url, {})
     .then((res) => res.json())
     .then((res) => {

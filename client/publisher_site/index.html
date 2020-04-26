@@ -170,7 +170,9 @@
             </div>
 
             <div class="sidebar-box">
-              <div id="goodads"></div>
+              <div id="goodads">
+              </div>
+              <div><i>Ad powered by GoodAds</i></div>
             </div>
           </div>
         </div>
@@ -250,7 +252,7 @@
       })
         .then(res => res.json())
         .then (res => {8
-            goodadsText.innerHTML = res.description;
+            goodadsText.innerHTML = "GiveHope is helping uplift children in rural Africa through education programs, healthcare initiatives and mentorship";
             goodadsLink.innerHTML = `Help ${res.name}!`;
             goodadsLink.href = `http://localhost:4000/?ngoId=${res.id}&publisherId=${publisherID}`;
             goodadsImg.src = `../static/${res.name}_ad_banner.png`;

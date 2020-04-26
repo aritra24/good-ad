@@ -11,6 +11,7 @@ def hello():
 @app.route('/serveAd/<publisher_id>')
 def serveAd(publisher_id):
     ngo = find_matching_ad(request.remote_addr)
+    print(publisher_id)
     adsLog = AdsLog(timestamp=datetime.now(),publisher_id=publisher_id,ngo_id=ngo['id'])
     db.session.add(adsLog)
     db.session.commit()
@@ -45,6 +46,7 @@ def recordPayment():
     db.session.add(paymentInfo)
     db.session.commit()
     amount = request_data.get('amount')
+    amount = float(amount)
     publisher_cut = 1
     ngo_cut = 0.95*amount
     infra = 0.05*amount - 1
@@ -66,4 +68,6 @@ def getPublisherProfile():
     pub['actions'] = len(payments)
     for payment in payments:
         pub['payments'] += payment.amount
+
+    pub['total_due'] = round(pub['total_due'], 2)
     return jsonify(pub)
