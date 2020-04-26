@@ -63,6 +63,7 @@ def getPublisherProfile():
     pub['click_throughs'] = len(db.session.query(VisitedNGOLog).join(Publisher).filter(Publisher.id == VisitedNGOLog.publisher_id).all())
     payments = db.session.query(PaymentInfo).join(Publisher).filter(Publisher.id == PaymentInfo.publisher_id).all()
     pub['payments'] = 0.0
+    pub['actions'] = len(payments)
     for payment in payments:
         pub['payments'] += payment.amount
     return jsonify(pub)
