@@ -1,4 +1,4 @@
 env/
 app/models/__pycache__/
 __pycache__
-app.db
+*.db
