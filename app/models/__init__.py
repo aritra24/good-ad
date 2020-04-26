@@ -27,6 +27,7 @@ class NGO(db.Model):
     website = db.Column(db.String(64))
     about = db.Column(db.String(64))
     category = db.Column(db.String(164))
+    country = db.Column(db.String(5))
     payments = db.relationship('PaymentInfo', backref='ngo_paid_to',lazy='dynamic')
 
     def as_dict(self):

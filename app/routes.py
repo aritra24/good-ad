@@ -2,7 +2,7 @@ from app import app, db
 from app.models import *
 import random as rs
 from flask import jsonify, request
-
+from app.helpers import *
 
 app.route('/')
 def hello():
@@ -10,10 +10,11 @@ def hello():
 
 @app.route('/serveAd')
 def serveAd():
-    ngosList = NGO.query.all()
-    index = rs.randint(0,len(ngosList)-1)
-    print(type(ngosList[index]))
-    return jsonify((ngosList[index].as_dict()))
+    # ngosList = NGO.query.all()
+    # index = rs.randint(0,len(ngosList)-1)
+    # print(type(ngosList[index]))
+    # return jsonify((ngosList[index].as_dict()))
+    return jsonify(find_matching_ad(request.remote_addr))
 
 @app.route('/getNgoDetails')
 def getNgoDetails():
