@@ -44,7 +44,7 @@ Let's take a look at the key players in our ecosystem to understand the platform
         <a href="https://github.com/ekamwalia">Ekam Walia</a>
         <br>
       </td>
-      <td align="center" width="20%" valign="top">
+      <td align="center" valign="top">
         <img width="150" height="150" src="https://github.com/dylan007.png?s=150">
         <br>
         <a href="https://github.com/dylan007">Shounak Dey</a>
