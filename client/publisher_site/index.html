@@ -235,26 +235,24 @@
 
     <script src="js/main.js"></script>
     <script>
-      var publisherID = "pub-martha-cooks-1234";
+      var publisherID = 2;
       var goodadsDiv = document.querySelector("#goodads");
       var goodadsText = document.createElement("p");
       var goodadsImg = document.createElement("img", {class: "mb-4 w-50", alt: "GoodAds Ad Banner"});
       var goodadsLink = document.createElement("a", {class: "btn btn-primary btn-sm"});
       fetch(
-        `http://localhost:3000/serveAd/${publisherID}`, {
-        method: 'GET', 
+        `http://localhost:5000/serveAd/${publisherID}`, {
+        method: 'GET',
         mode: 'cors', 
-        cache: 'no-cache', 
-        credentials: 'same-origin',
         headers: {
           'Content-Type': 'application/json'
         },
       })
         .then(res => res.json())
-        .then (res => {
+        .then (res => {8
             goodadsText.innerHTML = res.description;
             goodadsLink.innerHTML = `Help ${res.name}!`;
-            goodadsLink.href = `http://localhost:5000/${res.name}?ngoid=${res.id}&publisherid=${publisherID}`;
+            goodadsLink.href = `http://localhost:4000/?ngoId=${res.id}&publisherId=${publisherID}`;
             goodadsImg.src = `../static/${res.name}_ad_banner.png`;
         })
         goodadsDiv.classList.add("cta-btn");
