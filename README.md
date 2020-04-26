@@ -14,7 +14,7 @@
 4. [About](#about)
 5. [Credits](#credits)
 
-<h2 align="center">Introduction</h2>
+<h2 align="center" >Introduction</h2>
 
 Non Profits undertake work that is important for the society and they truly help make our world a better place. As such, at a lot of Non Profits, there aren't a lot of funds to spare for publicity and expensive ad campaings. However, getting their word out and raising more funding for their initiatives is also essential for them to function. Good Ads aims to solve this problem by developing an ad platform where the barrier to entry is \$0, unlike other platforms like GoogleAds and FacebookAds where a significant upfront investment is required.
 
@@ -91,3 +91,10 @@ GoodAds was developed at HackNow, an online hackthon organized by CalHacks with 
 - [Demo video here](https://youtu.be/4dTG0-VJQ6I)
 
 <h2 align="center">Credits</h2>
+This project uses the following open source website templates
+
+- [Klorofil admin template](https://www.themeineed.com/downloads/klorofil-free-bootstrap-admin-template/)
+
+- [Give Hope](https://colorlib.com/wp/template/givehope/)
+
+- [Foody](https://colorlib.com/wp/template/foody/)
