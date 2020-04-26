@@ -1,18 +1,9 @@
 window.onload = function () {
   var urlParams = new URLSearchParams(window.location.search);
-  var ngoid = urlParams.get("ngoid");
-  var publisherid = urlParams.get("publisherid");
-
-  function getAttrs(DOMelement) {
-    var obj = {};
-    $.each(DOMelement.attributes, function () {
-      if (this.specified) {
-        obj[this.name] = this.value;
-      }
-    });
-    return obj;
-  }
-
+  // var ngoid = urlParams.get("ngoid");
+  // var publisherid = urlParams.get("publisherid");
+  var ngoid = 1;
+  var publisherid = 2;
   var url = `http://localhost:3000/getNgoDetails?ngoid=${ngoid}&publisherid=${publisherid}`;
   fetch(url, {})
     .then((res) => res.json())
@@ -25,19 +16,17 @@ window.onload = function () {
     e.preventDefault();
     var url = `http://localhost:5000/recordPayment`;
     var body = {
-      ngoid: ngoid,
-      pubisherid: publisherid,
+      ngoId: ngoid,
+      publisherId: publisherid,
     };
     var fields = $("form").serializeArray();
     for (var i = 0; i < fields.length; i++) {
       body[fields[i]["name"]] = fields[i]["value"];
     }
 
-    fetch("http://localhost:5000/recordPayment", {
+    fetch(url, {
       method: "POST",
       mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
       },

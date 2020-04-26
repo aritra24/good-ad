@@ -104,12 +104,12 @@
             <ul class="nav">
               <li>
                 <a href="index.html" class=""
-                  ><i class="lnr lnr-home"></i> <span>Dashboard</span></a
+                  ><i class="lnr lnr-home"></i> <span>Publisher Dashboard</span></a
                 >
               </li>
               <li>
                 <a href="profile.html" class=""
-                  ><i class="lnr lnr-user"></i> <span>Profile</span></a
+                  ><i class="lnr lnr-user"></i> <span>Publisher Profile</span></a
                 >
               </li>
             </ul>
@@ -133,7 +133,7 @@
                         <div class="overlay"></div>
                         <div class="profile-main">
                           <img
-                            src="../static/chef2.jpeg"
+                            src="assets/img/chef2.jpeg"
                             class="img-circle"
                             alt="Avatar"
                           />
@@ -180,7 +180,7 @@
               <p>
                 Copy the scipt given below and paste this in your website to
                 start serving GoodAds adverstisements
-                <pre><code>&lt;script&gt;var publisherID="pub-martha-cooks-1234"; var goodadsDiv=document.querySelector("#goodads"); var goodadsText=document.createElement("p"); var goodadsImg=document.createElement("img",{class: "mb-4 w-50", alt: "GoodAds Ad Banner"}); var goodadsLink=document.createElement("a",{class: "btn btn-primary btn-sm"}); fetch( `http://localhost:3000/serveAd/${publisherID}`,{method: 'GET', mode: 'cors', cache: 'no-cache', credentials: 'same-origin', headers:{'Content-Type': 'application/json'},}) .then(res=> res.json()) .then (res=>{goodadsText.innerHTML=res.description; goodadsLink.innerHTML=`Help ${res.name}!`; goodadsLink.href=`http://localhost:5000/getNgoDetails?ngoid=${res.id}&publisherid=${publisherID}`; goodadsImg.src=`../static/${res.name}_ad_banner.png`;}) goodadsDiv.classList.add("cta-btn"); goodadsDiv.appendChild(goodadsImg); goodadsDiv.appendChild(goodadsText); goodadsDiv.appendChild(goodadsLink);
+                <pre><code id="publisher-embed-script">&lt;script&gt;var publisherID=4;var goodadsDiv=document.querySelector("#goodads"); var goodadsText=document.createElement("p"); var goodadsImg=document.createElement("img",{class: "mb-4 w-50", alt: "GoodAds Ad Banner"}); var goodadsLink=document.createElement("a",{class: "btn btn-primary btn-sm"}); fetch( `http://localhost:3000/serveAd/${publisherID}`,{method: 'GET', mode: 'cors', cache: 'no-cache', credentials: 'same-origin', headers:{'Content-Type': 'application/json'},}) .then(res=> res.json()) .then (res=>{goodadsText.innerHTML=res.description; goodadsLink.innerHTML=`Help ${res.name}!`; goodadsLink.href=`http://localhost:5000/getNgoDetails?ngoId=${res.id}&publisherId=${publisherID}`; goodadsImg.src=`../static/${res.name}_ad_banner.png`;}) goodadsDiv.classList.add("cta-btn"); goodadsDiv.appendChild(goodadsImg); goodadsDiv.appendChild(goodadsText); goodadsDiv.appendChild(goodadsLink);
 &lt;/script&gt;</code></pre>
               </p>
             </div>
@@ -206,5 +206,6 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="assets/scripts/klorofil-common.js"></script>
+    <script src="assets/scripts/profile.js"></script>
   </body>
 </html>
