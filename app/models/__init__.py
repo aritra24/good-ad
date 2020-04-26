@@ -16,6 +16,7 @@ class Publisher(db.Model):
     website = db.Column(db.String(64))
     about = db.Column(db.String(64))
     category = db.Column(db.String(164))
+    total_due = db.Column(db.Float, default=0)
     ads_served = db.relationship('AdsLog',backref='publisher',lazy='dynamic')
     click_throughs = db.relationship('VisitedNGOLog', backref='publisher', lazy='dynamic')
     payments = db.relationship('PaymentInfo', backref='publisher_paid_to',lazy='dynamic')
@@ -34,6 +35,7 @@ class NGO(db.Model):
     about = db.Column(db.String(64))
     category = db.Column(db.String(164))
     country = db.Column(db.String(5))
+    total_due = db.Column(db.Float, default=0)
     payments = db.relationship('PaymentInfo', backref='ngo_paid_to',lazy='dynamic')
 
     def as_dict(self):
