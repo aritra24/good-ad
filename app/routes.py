@@ -10,10 +10,11 @@ def hello():
 
 @app.route('/serveAd')
 def serveAd():
-    # ngosList = NGO.query.all()
-    # index = rs.randint(0,len(ngosList)-1)
-    # print(type(ngosList[index]))
-    # return jsonify((ngosList[index].as_dict()))
+    publisher_id = request.args.get('publisherId')
+    ngo = find_matching_ad(request.remote_addr)
+    adsLog = AdsLog(timestamp=datetime.now(),publisher_id=publisher_id,ngo_id=ngo['id'])
+    db.session.add(adsLog)
+    db.session.commit()
     return jsonify(find_matching_ad(request.remote_addr))
 
 @app.route('/getNgoDetails')
