@@ -4,6 +4,7 @@ from datetime import datetime
 import uuid
 
 db.create_all()
+admin = Publisher(name="admin",mobile=1,email="admin@admin.com",website="localhost:5000",about="admin",category="admin")
 ngo1 = NGO(name="a_ngo",mobile=9999999999,email="email@ngo.com",website="www.ngowebsite.com",about="about ngo",category="ngo category",country="IN")
 pub1 = Publisher(name="a_publisher",mobile=9999999991,email="email@pub.com",website="www.pubwebsite.com",about="about pub",category="pub category")
 pub2 = Publisher(name="marthacooks",mobile=9873344813,email="martha@marthacooks.com",website="www.marthacooks.com",about="about martha",category="cooking")
@@ -15,6 +16,7 @@ payment2 = PaymentInfo(name="user1", email="email@1.com",amount=25.5)
 payment2.publisher_paid_to=pub1
 payment2.ngo_paid_to = ngo1
 payment2.timestamp = datetime.now()
+db.session.add(admin)
 db.session.add(ngo1)
 db.session.add(pub1)
 db.session.add(pub2)
