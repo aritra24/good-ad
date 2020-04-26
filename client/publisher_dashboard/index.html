@@ -141,7 +141,7 @@
                     <div class="metric">
                       <span class="icon"><i class="fa fa-eye"></i></span>
                       <p>
-                        <span class="number">1,252</span>
+                        <span class="number" id="ad-served">1,252</span>
                         <span class="title">Ads Served</span>
                       </p>
                     </div>
@@ -152,7 +152,7 @@
                         ><i class="fa fa-mouse-pointer"></i
                       ></span>
                       <p>
-                        <span class="number">203</span>
+                        <span class="number" id="ad-clicks">203</span>
                         <span class="title">Ad Clicks</span>
                       </p>
                     </div>
@@ -161,7 +161,7 @@
                     <div class="metric">
                       <span class="icon"><i class="fa fa-money"></i></span>
                       <p>
-                        <span class="number">274,678</span>
+                        <span class="number" id="ad-actions">274,678</span>
                         <span class="title">Ad Actions</span>
                       </p>
                     </div>
@@ -170,8 +170,8 @@
                     <div class="metric">
                       <span class="icon"><i class="fa fa-bar-chart"></i></span>
                       <p>
-                        <span class="number">35%</span>
-                        <span class="title">Conversions</span>
+                        <span class="number" id="ad-conversions">35%</span>
+                        <span class="title">Revenue</span>
                       </p>
                     </div>
                   </div>
@@ -184,9 +184,8 @@
               </div>
             </div>
             <!-- END OVERVIEW -->
-            <div class="row">
-              <div class="col-md-6">
-                <!-- RECENT PURCHASES -->
+            <!-- <div class="row">
+               <div class="col-md-6">
                 <div class="panel">
                   <div class="panel-heading">
                     <h3 class="panel-title">Recent Purchases</h3>
@@ -274,10 +273,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- END RECENT PURCHASES -->
               </div>
               <div class="col-md-6">
-                <!-- MULTI CHARTS -->
                 <div class="panel">
                   <div class="panel-heading">
                     <h3 class="panel-title">Projection vs. Realization</h3>
@@ -294,14 +291,13 @@
                     <div id="visits-trends-chart" class="ct-chart"></div>
                   </div>
                 </div>
-                <!-- END MULTI CHARTS -->
               </div>
             </div>
             <div class="row"></div>
           </div>
-        </div>
+        </div> -->
         <!-- END MAIN CONTENT -->
-      </div>
+      <!-- </div>  -->
       <!-- END MAIN -->
       <div class="clearfix"></div>
       <footer>
@@ -322,6 +318,7 @@
     <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
     <script src="assets/vendor/chartist/js/chartist.min.js"></script>
     <script src="assets/scripts/klorofil-common.js"></script>
+    <script src="assets/scripts/dashboard.js"></script>
     <script>
       $(function () {
         var data, options;
