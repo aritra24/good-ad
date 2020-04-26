@@ -35,7 +35,7 @@ def recordPayment():
     request_data = request.get_json()
     ngo = NGO.query.filter_by(id=request_data['ngoId']).first()
     pub = Publisher.query.filter_by(id=request_data.get('publisherId')).first()
-    paymentInfo = PaymentInfo(name=request_data.get('name'),email=request_data.get('email'),transaction_id=request_data.get('txnId'),timestamp=datetime.now(),publisher_id=pub.id,ngo_id=ngo.id,amount=request_data.get('amount'))
+    paymentInfo = PaymentInfo(name=request_data.get('name'),email=request_data.get('email'),timestamp=datetime.now(),publisher_id=pub.id,ngo_id=ngo.id,amount=request_data.get('amount'))
     db.session.add(paymentInfo)
     db.session.commit()
     return "Done"

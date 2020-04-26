@@ -1,7 +1,10 @@
 from app import db
 from datetime import datetime
 from flask import json
+import uuid
 
+def generate_uuid():
+    return str(uuid.uuid4())
 
 class Publisher(db.Model):
     __tablename__ = "publisher"
@@ -38,9 +41,9 @@ class NGO(db.Model):
 
 class PaymentInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), unique=False)
-    email = db.Column(db.String(64),unique=True)
-    transaction_id = db.Column(db.String(64),unique=True)
+    name = db.Column(db.String(64))
+    email = db.Column(db.String(64))
+    transaction_id = db.Column(db.String(64), default=generate_uuid,unique=True,nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     publisher_id = db.Column(db.Integer, db.ForeignKey('publisher.id'))
     amount = db.Column(db.Float, unique=False)
@@ -66,3 +69,6 @@ class VisitedNGOLog(db.Model):
 
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+
+
