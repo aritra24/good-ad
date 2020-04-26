@@ -32,19 +32,19 @@ Let's take a look at the key players in our ecosystem to understand the platform
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top">
+      <td align="center" width="33%" valign="top">
         <img width="150" height="150" src="https://github.com/aritra24.png?s=150">
         <br>
         <a href="https://github.com/aritra24">Aritra Basu</a>
         <br>
       </td>
-      <td align="center" valign="top">
+      <td align="center" width="33%" valign="top">
         <img width="150" height="150" src="https://github.com/ekamwalia.png?s=150">
         <br>
         <a href="https://github.com/ekamwalia">Ekam Walia</a>
         <br>
       </td>
-      <td align="center" valign="top">
+      <td align="center" width="33%" valign="top">
         <img width="150" height="150" src="https://github.com/dylan007.png?s=150">
         <br>
         <a href="https://github.com/dylan007">Shounak Dey</a>
