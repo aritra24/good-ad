@@ -46,7 +46,7 @@ class PaymentInfo(db.Model):
     transaction_id = db.Column(db.String(64), default=generate_uuid,unique=True,nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     publisher_id = db.Column(db.Integer, db.ForeignKey('publisher.id'))
-    amount = db.Column(db.Float, unique=False)
+    amount = db.Column(db.Float, unique=False, nullable=False)
     ngo_id = db.Column(db.Integer, db.ForeignKey('ngo.id'))
 
     def as_dict(self):
