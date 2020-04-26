@@ -16,6 +16,9 @@ class Publisher(db.Model):
     ads_served = db.relationship('AdsLog',backref='publisher',lazy='dynamic')
     click_throughs = db.relationship('VisitedNGOLog', backref='publisher', lazy='dynamic')
     payments = db.relationship('PaymentInfo', backref='publisher_paid_to',lazy='dynamic')
+    
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 class NGO(db.Model):
     __tablename__ = "ngo"
@@ -40,6 +43,7 @@ class PaymentInfo(db.Model):
     transaction_id = db.Column(db.String(64),unique=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     publisher_id = db.Column(db.Integer, db.ForeignKey('publisher.id'))
+    amount = db.Column(db.Float, unique=False)
     ngo_id = db.Column(db.Integer, db.ForeignKey('ngo.id'))
 
     def as_dict(self):
